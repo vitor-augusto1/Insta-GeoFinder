@@ -4,3 +4,5 @@ import path from "path";
 
 import routes from "./routes";
 
+class App {
+}
