@@ -25,6 +25,28 @@ class instagramPlacesController {
     }
   }
 
+  public async returnInstagramPlaceID(placeName: string) {
+    const options = {
+      method: 'GET',
+      url: 'https://instagram-data12.p.rapidapi.com/search/',
+      params: {query: `${placeName}`, context: 'place'},
+      headers: {
+        'X-RapidAPI-Key': `${process.env.RAPID_API}`,
+        'X-RapidAPI-Host': 'instagram-data12.p.rapidapi.com'
+      }
+    };
+    try {
+      const apiResponse = await axios.request(options);
+      const responseData = apiResponse.data;
+      const places = responseData.places;
+      const placesData = places[0].place.location;
+      const placeID = placesData.pk;
+      console.log(placeID)
+      return placeID;
+    } catch(error) {
+      console.log(error);
+    }
+  }
 }
 
 export default new instagramPlacesController();
