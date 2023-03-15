@@ -10,7 +10,8 @@ routes.get("/", (request, response) => {
 })
 
 routes.get("/api/v1/place-information", (request, response) => {
-  response.send({places: "Here"});
+  response.send({places: "here"});
+  instagramPlacesController.returnInstagramPlaceID("new york");
 })
 
 export default routes;
