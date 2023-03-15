@@ -7,4 +7,8 @@ routes.get("/", (request, response) => {
   response.send({hello: "World"});
 })
 
+routes.get("/api/v1/place-information", (request, response) => {
+  response.send({places: "Here"});
+})
+
 export default routes;
