@@ -1,5 +1,7 @@
 import path from "path";
-import { Router } from "express";
+import instagramPlacesController from "./controllers/instagramPlacesController";
+import { response, Router } from "express";
+
 
 const routes = Router();
 
