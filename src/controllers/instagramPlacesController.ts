@@ -25,7 +25,7 @@ class InstagramPlacesController {
     }
   }
 
-  public async returnInstagramPlaceID(placeName: string) {
+  private async returnInstagramPlaceID(placeName: string) {
     const options = {
       method: 'GET',
       url: 'https://instagram-data12.p.rapidapi.com/search/',
