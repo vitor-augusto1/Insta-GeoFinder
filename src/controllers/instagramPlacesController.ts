@@ -46,6 +46,20 @@ class InstagramPlacesController {
       console.log(error);
     }
   }
+
+  public async returnMediaByPlaceID(request: Request, response: Response) {
+    const placeNameProvidedByUser = request.query.place_id as string;
+    console.log(placeNameProvidedByUser);
+    try {
+      const instagramPlaceID = await this.returnInstagramPlaceID(placeNameProvidedByUser);
+      console.log(instagramPlaceID);
+      const instagramMedia = await this.returnMediaFromAninstagramPlace(instagramPlaceID);
+      response.status(200).send({media: instagramMedia});
+    } catch(error) {
+      console.log(error);
+      response.status(500).send({ error: 'Internal Server Error' });
+    }
+  }
 }
 
 export default new InstagramPlacesController();
