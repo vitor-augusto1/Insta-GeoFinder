@@ -1,5 +1,5 @@
 import path from "path";
-import instagramPlacesController from "./controllers/instagramPlacesController";
+import InstagramPlacesController from "./controllers/instagramPlacesController";
 import { response, Router } from "express";
 
 
