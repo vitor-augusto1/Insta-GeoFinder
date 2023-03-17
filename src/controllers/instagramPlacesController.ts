@@ -41,7 +41,6 @@ class InstagramPlacesController {
       const places = responseData.places;
       const placesData = places[0].place.location;
       const placeID = placesData.pk;
-      console.log(placeID)
       return placeID;
     } catch(error) {
       console.log(error);
@@ -49,4 +48,4 @@ class InstagramPlacesController {
   }
 }
 
-export default new instagramPlacesController();
+export default new InstagramPlacesController();
