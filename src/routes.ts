@@ -9,9 +9,8 @@ routes.get("/", (request, response) => {
   response.send({hello: "World"});
 })
 
-routes.get("/api/v1/place-information", (request, response) => {
-  response.send({places: "here"});
-  instagramPlacesController.returnInstagramPlaceID("new york");
+routes.get("/api/v1/place-information", async (request, response) => {
+  await InstagramPlacesController.returnMediaByPlaceID(request, response);
 })
 
 export default routes;
