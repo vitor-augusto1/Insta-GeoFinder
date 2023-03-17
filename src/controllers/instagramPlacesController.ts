@@ -3,8 +3,8 @@ dotenv.config();
 import { Request, Response } from "express";
 import axios from "axios";
 
-  private async returnMediaFromAninstagramPlace(placeID: number = 30630047) {
 class InstagramPlacesController {
+  private async returnMediaFromAninstagramPlace(placeID: number | Promise<number> = 30630047) {
     const options = {
       method: 'POST',
       url: 'https://rocketapi-for-instagram.p.rapidapi.com/instagram/location/get_media',
