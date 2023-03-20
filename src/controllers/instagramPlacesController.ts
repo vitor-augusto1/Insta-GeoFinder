@@ -21,7 +21,7 @@ class InstagramPlacesController {
       const sections = responseBody.sections;
       return sections;
     } catch(error) {
-      console.log(error);
+      return false;
     }
   }
 
