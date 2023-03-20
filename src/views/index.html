@@ -44,6 +44,11 @@
           .then(data => { return data.json(); })
           .then(jsonResponse => {
             const arrayOfUserMedia = jsonResponse.media;
+            for (let media of arrayOfUserMedia) {
+              const layoutOfContent = media.layout_content;
+              const userMedia = layoutOfContent.medias[0].media;
+              const userPic = userMedia.user.profile_pic_url;
+              const userName = userMedia.user.username;
             }
           })
           .catch(error => { console.log(error) });
