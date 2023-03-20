@@ -38,6 +38,9 @@
       const formDataObject = new FormData(formElement);
       const formDataEntries = Object.fromEntries(formDataObject);
       const place = formDataEntries['place'];
+      const thereIsplaceToSearch = place != ''
+      if (thereIsplaceToSearch) {
+      }
     })
   </script>
 </html>
