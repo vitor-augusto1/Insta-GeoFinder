@@ -51,9 +51,9 @@ class InstagramPlacesController {
 
   public async returnMediaByPlaceID(request: Request, response: Response) {
     const placeNameProvidedByUser = request.query.place_id as string;
-    console.log(placeNameProvidedByUser);
     try {
       const instagramPlaceID = await this.returnInstagramPlaceID(placeNameProvidedByUser);
+      if (instagramPlaceID === false) { throw new Error("Place Not Found.") };
       console.log(instagramPlaceID);
       const instagramMedia = await this.returnMediaFromAninstagramPlace(instagramPlaceID);
       response.status(200).send({media: instagramMedia});
