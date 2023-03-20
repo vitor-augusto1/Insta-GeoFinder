@@ -43,6 +43,7 @@ class InstagramPlacesController {
       const placesData = places[0].place.location;
       const placeID = placesData.pk;
       return placeID;
+      if (firstPlace == undefined) { throw new Error("ID not found") };
     } catch(error) {
       console.log(error);
     }
