@@ -59,8 +59,10 @@ class InstagramPlacesController {
       if (instagramMedia === false) { throw new Error("No media for this place.") };
       response.status(200).send({media: instagramMedia});
     } catch(error) {
-      console.log(error);
-      response.status(500).send({ error: 'Internal Server Error' });
+      let message = "Internal server error.";
+      const theThrewErrorisAnInstanceOfTheErrorClass = error instanceof Error;
+      if (theThrewErrorisAnInstanceOfTheErrorClass) { message = error.message };
+      response.status(500).send({ error: message });
     }
   }
 }
