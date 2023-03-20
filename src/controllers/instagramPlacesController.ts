@@ -56,6 +56,7 @@ class InstagramPlacesController {
       if (instagramPlaceID === false) { throw new Error("Place Not Found.") };
       console.log(instagramPlaceID);
       const instagramMedia = await this.returnMediaFromAninstagramPlace(instagramPlaceID);
+      if (instagramMedia === false) { throw new Error("No media for this place.") };
       response.status(200).send({media: instagramMedia});
     } catch(error) {
       console.log(error);
