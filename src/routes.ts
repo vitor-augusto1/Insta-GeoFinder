@@ -6,7 +6,7 @@ import { response, Router } from "express";
 const routes = Router();
 
 routes.get("/", (request, response) => {
-  response.send({hello: "World"});
+  response.sendFile(path.join(__dirname, 'views/index.html'));
 })
 
 routes.get("/api/v1/place-information", async (request, response) => {
