@@ -37,6 +37,7 @@ class InstagramPlacesController {
     };
     try {
       const apiResponse = await axios.request(options);
+      if (apiResponse.status !== 200) { throw new Error("Request Failed") };
       const responseData = apiResponse.data;
       const places = responseData.places;
       const placesData = places[0].place.location;
