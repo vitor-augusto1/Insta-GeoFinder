@@ -45,7 +45,7 @@ class InstagramPlacesController {
       const placesID = firstPlace.place.location.pk;
       return placesID;
     } catch(error) {
-      console.log(error);
+      return false;
     }
   }
 
