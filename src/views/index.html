@@ -53,6 +53,7 @@
               const img = document.createElement('img');
               const UserProfileLink = document.createElement('a');
               img.crossOrigin = "same-origin";
+              img.src = `https://corsproxy.io/?${userPic}`;
             }
           })
           .catch(error => { console.log(error) });
