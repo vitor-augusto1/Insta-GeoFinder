@@ -56,6 +56,8 @@
               img.src = `https://corsproxy.io/?${userPic}`;
               UserProfileLink.href = "https://www.instagram.com/"+userName;
               UserProfileLink.appendChild(img)
+              container.appendChild(UserProfileLink);
+              console.log({userName: userPic});
             }
           })
           .catch(error => { console.log(error) });
