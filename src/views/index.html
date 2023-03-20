@@ -33,6 +33,8 @@
     const formElement = document.querySelector("#instagramplacesform")
     formElement.addEventListener("submit", event => {
       event.preventDefault();
+      let loadingHtmlTag = document.getElementById("loading");
+      loadingHtmlTag.textContent = "Loading Users...";
     })
   </script>
 </html>
