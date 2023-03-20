@@ -42,6 +42,10 @@
       if (thereIsplaceToSearch) {
         fetch(`/api/v1/place-information/?place_id=${place}`)
           .then(data => { return data.json(); })
+          .then(jsonResponse => {
+            const arrayOfUserMedia = jsonResponse.media;
+            }
+          })
           .catch(error => { console.log(error) });
       }
     })
