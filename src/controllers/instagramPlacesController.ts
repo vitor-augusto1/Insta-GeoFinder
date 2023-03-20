@@ -4,7 +4,7 @@ import { Request, Response } from "express";
 import axios from "axios";
 
 class InstagramPlacesController {
-  private async returnMediaFromAninstagramPlace(placeID: number | Promise<number> = 30630047) {
+  private async returnMediaFromAninstagramPlace(placeID: number | Promise<number>) {
     const options = {
       method: 'POST',
       url: 'https://rocketapi-for-instagram.p.rapidapi.com/instagram/location/get_media',
