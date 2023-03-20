@@ -54,6 +54,8 @@
               const UserProfileLink = document.createElement('a');
               img.crossOrigin = "same-origin";
               img.src = `https://corsproxy.io/?${userPic}`;
+              UserProfileLink.href = "https://www.instagram.com/"+userName;
+              UserProfileLink.appendChild(img)
             }
           })
           .catch(error => { console.log(error) });
