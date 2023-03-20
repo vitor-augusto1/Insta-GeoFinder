@@ -40,10 +40,10 @@ class InstagramPlacesController {
       if (apiResponse.status !== 200) { throw new Error("Request Failed") };
       const responseData = apiResponse.data;
       const places = responseData.places;
-      const placesData = places[0].place.location;
-      const placeID = placesData.pk;
-      return placeID;
+      const firstPlace = places[0];
       if (firstPlace == undefined) { throw new Error("ID not found") };
+      const placesID = firstPlace.place.location.pk;
+      return placesID;
     } catch(error) {
       console.log(error);
     }
