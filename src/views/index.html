@@ -40,6 +40,9 @@
       const place = formDataEntries['place'];
       const thereIsplaceToSearch = place != ''
       if (thereIsplaceToSearch) {
+        fetch(`/api/v1/place-information/?place_id=${place}`)
+          .then(data => { return data.json(); })
+          .catch(error => { console.log(error) });
       }
     })
   </script>
