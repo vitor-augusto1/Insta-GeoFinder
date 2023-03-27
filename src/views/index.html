@@ -43,6 +43,7 @@
         fetch(`/api/v1/place-information/?place_id=${place}`)
           .then(data => { return data.json(); })
           .then(jsonResponse => {
+            loadingHtmlTag.textContent = "";
             const arrayOfUserMedia = jsonResponse.media;
             for (let media of arrayOfUserMedia) {
               const layoutOfContent = media.layout_content;
@@ -60,7 +61,10 @@
               console.log({userName: userPic});
             }
           })
-          .catch(error => { console.log(error) });
+          .catch(error => {
+            console.log(error)
+            loadingHtmlTag.textContent = "Place not found.";
+          });
       }
     })
   </script>
