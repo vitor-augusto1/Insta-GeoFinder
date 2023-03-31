@@ -22,7 +22,7 @@
             <button type="submit" class="btn btn-success">Search</button>
             <br><br>
             <div id="post-information">
-              <p id="loading"></p>
+              <p id="message"></p>
             </div>
           </form>
         </div>
@@ -33,8 +33,8 @@
     const formElement = document.querySelector("#instagramplacesform")
     formElement.addEventListener("submit", event => {
       event.preventDefault();
-      let loadingHtmlTag = document.getElementById("loading");
-      loadingHtmlTag.textContent = "Loading Users...";
+      consoleTest();
+      messageToUser(true, document, "message", "Loading users...");
       const formDataObject = new FormData(formElement);
       const formDataEntries = Object.fromEntries(formDataObject);
       const place = formDataEntries['place'];
@@ -43,7 +43,7 @@
         fetch(`/api/v1/place-information/?place_id=${place}`)
           .then(data => { return data.json(); })
           .then(jsonResponse => {
-            loadingHtmlTag.textContent = "";
+            messageToUser(false, document, "message", "")
             const arrayOfUserMedia = jsonResponse.media;
             for (let media of arrayOfUserMedia) {
               const layoutOfContent = media.layout_content;
@@ -63,7 +63,7 @@
           })
           .catch(error => {
             console.log(error)
-            loadingHtmlTag.textContent = "Place not found.";
+            messageToUser(true, document, "message", "Users not found.");
           });
       }
     })
