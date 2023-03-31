@@ -26,10 +26,12 @@ class InstagramPlacesController {
   }
 
   private async returnInstagramPlaceID(placeName: string) {
+    const lowerCasePlaceName = placeName.toLowerCase();
+    console.log(lowerCasePlaceName);
     const options = {
       method: 'GET',
       url: 'https://instagram-data12.p.rapidapi.com/search/',
-      params: {query: `${placeName}`, context: 'place'},
+      params: {query: `${lowerCasePlaceName}`, context: 'place'},
       headers: {
         'X-RapidAPI-Key': `${process.env.RAPID_API}`,
         'X-RapidAPI-Host': 'instagram-data12.p.rapidapi.com'
