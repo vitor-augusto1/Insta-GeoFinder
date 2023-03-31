@@ -62,6 +62,7 @@ class InstagramPlacesController {
       let message = "Internal server error.";
       const theThrewErrorisAnInstanceOfTheErrorClass = error instanceof Error;
       if (theThrewErrorisAnInstanceOfTheErrorClass) { message = error.message };
+      console.log(message);
       response.status(500).send({ error: message });
     }
   }
