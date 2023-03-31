@@ -33,7 +33,6 @@
     const formElement = document.querySelector("#instagramplacesform")
     formElement.addEventListener("submit", event => {
       event.preventDefault();
-      consoleTest();
       messageToUser(true, document, "message", "Loading users...");
       const formDataObject = new FormData(formElement);
       const formDataEntries = Object.fromEntries(formDataObject);
