@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/public/style.css">
+    <script src="/public/main.js"></script>
+    <title>Internship</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <br><h1 class="text-center title-h1" id="h1-title">🧭 Insta Geo Finder</h1>
+          <hr class="hr-line">
+          <form action="" method="post" id="instagramplacesform">
+            <div class="form-group">
+              <label for="place" id="location-label">Location:</label>
+              <input name="place" id="place" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Search</button>
+            <br><br>
+            <div id="post-information">
+              <p id="message"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const formElement = document.querySelector("#instagramplacesform")
+    formElement.addEventListener("submit", event => {
+      event.preventDefault();
+      messageToUser(true, document, "message", "Loading users...");
+      const formDataObject = new FormData(formElement);
+      const formDataEntries = Object.fromEntries(formDataObject);
+      const place = formDataEntries['place'];
+      const thereIsplaceToSearch = place != ''
+      if (thereIsplaceToSearch) {
+        fetchPlaceHandler(place, document);
+      }
+    })
+  </script>
+</html>

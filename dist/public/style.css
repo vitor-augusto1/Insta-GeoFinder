@@ -1,0 +1,43 @@
+body {
+  background-color: #181c1f;
+}
+
+.title-h1 {
+  color: #ffffff;
+}
+
+#location-label {
+  color: #ffffff;
+}
+
+
+#text {
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: large;
+}
+
+#message {
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: large;
+}
+
+#place {
+  resize: vertical;
+  background-color: #22272e;
+  color: #ffffff;
+  border-color: #3937cd;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.container-el {
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.hr-line {
+  border-top: 1px solid #333380;
+  padding-bottom: 35px;
+}
